@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        title QUIZ
+        style
+            include main.css
+        
+    body
+        main
+            - for (var j = 1; j < 11; j++)
+                .col
+                    h2 Kategorie
+                    - for (var i = 1; i < 11; i++)
+                        .row(data-id=i*j)
+                            .dot
+                                h3=i*10
+        
+        - for (var j = 1; j < 11; j++)
+            - for (var i = 1; i < 11; i++)
+                .pane(id=i*j)
+                    .close Schließen
+                    h2 Frage
+                    .question  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.
+                    h2 Antwort
+                    .show 
+                        h2 Antwort Zeigen
+                        .answer  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.
+
+
+        footer
+
+        script(src="./jquery-3.2.1.min.js")
+        script(src="./main.js")
+        
+
+            
+                
