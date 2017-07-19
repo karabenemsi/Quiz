@@ -7,24 +7,474 @@ html
         
     body
         main
-            - for (var j = 1; j < 11; j++)
-                .col
-                    h2 Kategorie
-                    - for (var i = 1; i < 11; i++)
-                        .row(data-id=i*j)
-                            .dot
-                                h3=i*10
-        
-        - for (var j = 1; j < 11; j++)
-            - for (var i = 1; i < 11; i++)
-                .pane(id=i*j)
-                    .close Schließen
-                    h2 Frage
-                    .question  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.
-                    h2 Antwort
-                    .show 
-                        h2 Antwort Zeigen
-                        .answer  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.
+            .col
+                h2 Allgemeinwissen
+                .row(data-id=11)
+                    .dot
+                        h3 20
+                .row(data-id=12)
+                    .dot
+                        h3 40
+                .row(data-id=13)
+                    .dot
+                        h3 60
+                .row(data-id=14)
+                    .dot
+                        h3 80
+                .row(data-id=15)
+                    .dot
+                        h3 100
+            .col
+                h2 GB Allgemein
+                .row(data-id=21)
+                    .dot
+                        h3 20
+                .row(data-id=22)
+                    .dot
+                        h3 40
+                .row(data-id=23)
+                    .dot
+                        h3 60
+                .row(data-id=24)
+                    .dot
+                        h3 80
+                .row(data-id=25)
+                    .dot
+                        h3 100
+            .col
+                h2 K
+                .row(data-id=31)
+                    .dot
+                        h3 20
+                .row(data-id=32)
+                    .dot
+                        h3 40
+                .row(data-id=33)
+                    .dot
+                        h3 60
+                .row(data-id=34)
+                    .dot
+                        h3 80
+                .row(data-id=35)
+                    .dot
+                        h3 100
+            .col
+                h2 IT
+                .row(data-id=41)
+                    .dot
+                        h3 20
+                .row(data-id=42)
+                    .dot
+                        h3 40
+                .row(data-id=43)
+                    .dot
+                        h3 60
+                .row(data-id=44)
+                    .dot
+                        h3 80
+                .row(data-id=45)
+                    .dot
+                        h3 100
+            .col
+                h2 D
+                .row(data-id=51)
+                    .dot
+                        h3 20
+                .row(data-id=52)
+                    .dot
+                        h3 40
+                .row(data-id=53)
+                    .dot
+                        h3 60
+                .row(data-id=54)
+                    .dot
+                        h3 80
+                .row(data-id=55)
+                    .dot
+                        h3 100
+            .col
+                h2 Azubis
+                .row(data-id=61)
+                    .dot
+                        h3 20
+                .row(data-id=62)
+                    .dot
+                        h3 40
+                .row(data-id=63)
+                    .dot
+                        h3 60
+                .row(data-id=64)
+                    .dot
+                        h3 80
+                .row(data-id=65)
+                    .dot
+                        h3 100
+            .col
+                h2 Schätzfrage
+                .row(data-id=71)
+                    .dot
+                        h3 20
+                .row(data-id=72)
+                    .dot
+                        h3 40
+                .row(data-id=73)
+                    .dot
+                        h3 60
+                .row(data-id=74)
+                    .dot
+                        h3 80
+                .row(data-id=75)
+                    .dot
+                        h3 100
+            .col
+                h2 Gesichter
+                .row(data-id=81)
+                    .dot
+                        h3 20
+                .row(data-id=82)
+                    .dot
+                        h3 40
+                .row(data-id=83)
+                    .dot
+                        h3 60
+                .row(data-id=84)
+                    .dot
+                        h3 80
+                .row(data-id=85)
+                    .dot
+                        h3 100
+
+
+        .pane(id=11)
+            .close Schließen
+            h2 Frage
+            .question Welche Bundesländer hat Deutschland?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=12)
+            .close Schließen
+            h2 Frage
+            .question Wie heißt unser Bundespräsident?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=13)
+            .close Schließen
+            h2 Frage
+            .question 
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=14)
+            .close Schließen
+            h2 Frage
+            .question Wie heißt die Hauptstadt von Kanada?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=15)
+            .close Schließen
+            h2 Frage
+            .question Welche Länder sitzen im G20?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=21)
+            .close Schließen
+            h2 Frage
+            .question Nenne die vier Werte von GB
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=22)
+            .close Schließen
+            h2 Frage
+            .question Was verbirgt sich hinter dem Kürzel Z-MD?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=23)
+            .close Schließen
+            h2 Frage
+            .question Was fertigt die Abteilung CPC?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=24)
+            .close Schließen
+            h2 Frage
+            .question Nenne die Schulungsräume im TEZ 2.OG
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=25)
+            .close Schließen
+            h2 Frage
+            .question In welcher Reihenfolge stehen die Kategorien auf dem Foodplan?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=31)
+            .close Schließen
+            h2 Frage
+            .question 
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=32)
+            .close Schließen
+            h2 Frage
+            .question  
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=33)
+            .close Schließen
+            h2 Frage
+            .question Wie viele verschiedene Produkte hat der Bereich K?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=34)
+            .close Schließen
+            h2 Frage
+            .question Wie heißt die kleinste Nadel?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=35)
+            .close Schließen
+            h2 Frage
+            .question  
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=41)
+            .close Schließen
+            h2 Frage
+            .question Was heißt IT ausgeschrieben?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=42)
+            .close Schließen
+            h2 Frage
+            .question DHCP ausgeschrieben?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=43)
+            .close Schließen
+            h2 Frage
+            .question Welches Symbol erscheint beim drücken der Tastenkombination 
+              kbd Alt
+              |  + 
+              kbd 3
+              |  ?              
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=44)
+            .close Schließen
+            h2 Frage
+            .question Welches G-Präfix hat Belgien?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=45)
+            .close Schließen
+            h2 Frage
+            .question Das wievielte Bit im IP-Header ist das Evil-Bit?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=51)
+            .close Schließen
+            h2 Frage
+            .question Wieviele Kardex-Türme stehen im Hauptlager
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=52)
+            .close Schließen
+            h2 Frage
+            .question Wie viel Rasenfläche hat GB?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=53)
+            .close Schließen
+            h2 Frage
+            .question Wer ist Spartenleiter von D?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=54)
+            .close Schließen
+            h2 Frage
+            .question  
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=55)
+            .close Schließen
+            h2 Frage
+            .question  
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=61)
+            .close Schließen
+            h2 Frage
+            .question Wann und wo war man das letzte mal auf der ITMA?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=62)
+            .close Schließen
+            h2 Frage
+            .question Welcher Azubi aus dem zweiten Lehrjar startete seine Ausbildung erst 6 Monate später als die anderen?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  Daniel Weber
+        .pane(id=63)
+            .close Schließen
+            h2 Frage
+            .question Weit wann gibt es die Azubifirma
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=64)
+            .close Schließen
+            h2 Frage 
+            .question Wie alt ist aktuell der älteste GB-Azubi?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=65)
+            .close Schließen
+            h2 Frage
+            .question 
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=71) Wie viele Einwohner hat Europa?
+            .close Schließen
+            h2 Frage
+            .question 
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=72)
+            .close Schließen
+            h2 Frage
+            .question Wie weit ist die Erde von der Sonne entfernt? (km)
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer 1AE =
+        .pane(id=73)
+            .close Schließen
+            h2 Frage Wie viele Server (VMs) hat GB?
+            .question 
+            h2 Antwort 650
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=74)
+            .close Schließen
+            h2 Frage Wie weit ist Albstadt von DaNang entfernt? (Luftlinie)
+            .question 
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=75)
+            .close Schließen
+            h2 Frage
+            .question Wie groß ist der Durchmesser der Erde?
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=81)
+            .close Schließen
+            h2 Frage
+            .question 
+              img(src="./img/face1.jpg")
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=82)
+            .close Schließen
+            h2 Frage
+            .question  
+              img(src="./img/face2.jpg")
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=83)
+            .close Schließen
+            h2 Frage
+            .question 
+              img(src="./img/face3.jpg")
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=84)
+            .close Schließen
+            h2 Frage
+            .question 
+              img(src="./img/face1.jpg")
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+        .pane(id=85)
+            .close Schließen
+            h2 Frage
+            .question 
+              img(src="./img/face2.jpg")
+            h2 Antwort
+            .show 
+                h2 Antwort Zeigen
+                .answer  
+    
 
 
         footer

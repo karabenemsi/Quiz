@@ -1,7 +1,7 @@
 $(function(){
-    $('.row').click(function(){
+    $('.dot').click(function(){
         $(this).addClass('opened');
-        var id = $(this).data('id');
+        var id = $(this).parents('.row').data('id');
         $('.pane#' + id).show();
     });
 

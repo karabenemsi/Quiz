@@ -9,6 +9,7 @@ body {
 main {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -44,8 +45,26 @@ main {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 0 10px; }
+    padding: 0 10px;
+    width: 8%; }
+    main .col h2 {
+      text-align: center;
+      height: 30px; }
   main .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 10px 0; }
+  main .dot {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -69,7 +88,7 @@ main {
     background-color: #2742a4;
     color: #fff;
     cursor: pointer; }
-    main .row.opened {
+    main .dot.opened {
       background: #ad3134;
       color: #ad3134; }
 
@@ -87,7 +106,12 @@ main {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: none; }
-  .pane .close {
+  .pane .question {
+    font-size: 3rem;
+    text-align: center; }
+    .pane .question img {
+      max-height: 500px; }
+  .pane .close, .pane .show h2 {
     padding: 5px;
     border-radius: 2px;
     background: #86a84e;
@@ -102,416 +126,172 @@ main {
   .pane .show .answer {
     display: none; }
 
+kbd {
+  display: inline-block;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  padding: 0 6px; }
+
     </style>
   </head>
   <body>
     <main>
       <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="1">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="2">
+        <h2>Allgemeinwissen</h2>
+        <div class="row" data-id="11">
           <div class="dot">
             <h3>20</h3>
-          </div>
-        </div>
-        <div class="row" data-id="3">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="4">
-          <div class="dot">
-            <h3>40</h3>
-          </div>
-        </div>
-        <div class="row" data-id="5">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="6">
-          <div class="dot">
-            <h3>60</h3>
-          </div>
-        </div>
-        <div class="row" data-id="7">
-          <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="8">
-          <div class="dot">
-            <h3>80</h3>
-          </div>
-        </div>
-        <div class="row" data-id="9">
-          <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="10">
-          <div class="dot">
-            <h3>100</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="2">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="4">
-          <div class="dot">
-            <h3>20</h3>
-          </div>
-        </div>
-        <div class="row" data-id="6">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="8">
-          <div class="dot">
-            <h3>40</h3>
-          </div>
-        </div>
-        <div class="row" data-id="10">
-          <div class="dot">
-            <h3>50</h3>
           </div>
         </div>
         <div class="row" data-id="12">
+          <div class="dot">
+            <h3>40</h3>
+          </div>
+        </div>
+        <div class="row" data-id="13">
           <div class="dot">
             <h3>60</h3>
           </div>
         </div>
         <div class="row" data-id="14">
           <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="16">
-          <div class="dot">
             <h3>80</h3>
           </div>
         </div>
-        <div class="row" data-id="18">
-          <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="20">
+        <div class="row" data-id="15">
           <div class="dot">
             <h3>100</h3>
           </div>
         </div>
       </div>
       <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="3">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="6">
-          <div class="dot">
-            <h3>20</h3>
-          </div>
-        </div>
-        <div class="row" data-id="9">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="12">
-          <div class="dot">
-            <h3>40</h3>
-          </div>
-        </div>
-        <div class="row" data-id="15">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="18">
-          <div class="dot">
-            <h3>60</h3>
-          </div>
-        </div>
+        <h2>GB Allgemein</h2>
         <div class="row" data-id="21">
           <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="24">
-          <div class="dot">
-            <h3>80</h3>
-          </div>
-        </div>
-        <div class="row" data-id="27">
-          <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="30">
-          <div class="dot">
-            <h3>100</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="4">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="8">
-          <div class="dot">
             <h3>20</h3>
           </div>
         </div>
-        <div class="row" data-id="12">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="16">
+        <div class="row" data-id="22">
           <div class="dot">
             <h3>40</h3>
           </div>
         </div>
-        <div class="row" data-id="20">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="24">
+        <div class="row" data-id="23">
           <div class="dot">
             <h3>60</h3>
           </div>
         </div>
-        <div class="row" data-id="28">
-          <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="32">
+        <div class="row" data-id="24">
           <div class="dot">
             <h3>80</h3>
-          </div>
-        </div>
-        <div class="row" data-id="36">
-          <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="40">
-          <div class="dot">
-            <h3>100</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="5">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="10">
-          <div class="dot">
-            <h3>20</h3>
-          </div>
-        </div>
-        <div class="row" data-id="15">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="20">
-          <div class="dot">
-            <h3>40</h3>
           </div>
         </div>
         <div class="row" data-id="25">
           <div class="dot">
-            <h3>50</h3>
+            <h3>100</h3>
           </div>
         </div>
-        <div class="row" data-id="30">
+      </div>
+      <div class="col">
+        <h2>K</h2>
+        <div class="row" data-id="31">
+          <div class="dot">
+            <h3>20</h3>
+          </div>
+        </div>
+        <div class="row" data-id="32">
+          <div class="dot">
+            <h3>40</h3>
+          </div>
+        </div>
+        <div class="row" data-id="33">
           <div class="dot">
             <h3>60</h3>
           </div>
         </div>
-        <div class="row" data-id="35">
+        <div class="row" data-id="34">
           <div class="dot">
-            <h3>70</h3>
+            <h3>80</h3>
           </div>
         </div>
-        <div class="row" data-id="40">
+        <div class="row" data-id="35">
+          <div class="dot">
+            <h3>100</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h2>IT</h2>
+        <div class="row" data-id="41">
+          <div class="dot">
+            <h3>20</h3>
+          </div>
+        </div>
+        <div class="row" data-id="42">
+          <div class="dot">
+            <h3>40</h3>
+          </div>
+        </div>
+        <div class="row" data-id="43">
+          <div class="dot">
+            <h3>60</h3>
+          </div>
+        </div>
+        <div class="row" data-id="44">
           <div class="dot">
             <h3>80</h3>
           </div>
         </div>
         <div class="row" data-id="45">
           <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="50">
-          <div class="dot">
             <h3>100</h3>
           </div>
         </div>
       </div>
       <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="6">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="12">
+        <h2>D</h2>
+        <div class="row" data-id="51">
           <div class="dot">
             <h3>20</h3>
           </div>
         </div>
-        <div class="row" data-id="18">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="24">
+        <div class="row" data-id="52">
           <div class="dot">
             <h3>40</h3>
           </div>
         </div>
-        <div class="row" data-id="30">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="36">
+        <div class="row" data-id="53">
           <div class="dot">
             <h3>60</h3>
-          </div>
-        </div>
-        <div class="row" data-id="42">
-          <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="48">
-          <div class="dot">
-            <h3>80</h3>
           </div>
         </div>
         <div class="row" data-id="54">
           <div class="dot">
-            <h3>90</h3>
+            <h3>80</h3>
           </div>
         </div>
-        <div class="row" data-id="60">
+        <div class="row" data-id="55">
           <div class="dot">
             <h3>100</h3>
           </div>
         </div>
       </div>
       <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="7">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="14">
+        <h2>Azubis</h2>
+        <div class="row" data-id="61">
           <div class="dot">
             <h3>20</h3>
           </div>
         </div>
-        <div class="row" data-id="21">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="28">
+        <div class="row" data-id="62">
           <div class="dot">
             <h3>40</h3>
-          </div>
-        </div>
-        <div class="row" data-id="35">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="42">
-          <div class="dot">
-            <h3>60</h3>
-          </div>
-        </div>
-        <div class="row" data-id="49">
-          <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="56">
-          <div class="dot">
-            <h3>80</h3>
           </div>
         </div>
         <div class="row" data-id="63">
           <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="70">
-          <div class="dot">
-            <h3>100</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="8">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="16">
-          <div class="dot">
-            <h3>20</h3>
-          </div>
-        </div>
-        <div class="row" data-id="24">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="32">
-          <div class="dot">
-            <h3>40</h3>
-          </div>
-        </div>
-        <div class="row" data-id="40">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="48">
-          <div class="dot">
             <h3>60</h3>
-          </div>
-        </div>
-        <div class="row" data-id="56">
-          <div class="dot">
-            <h3>70</h3>
           </div>
         </div>
         <div class="row" data-id="64">
@@ -519,1122 +299,467 @@ main {
             <h3>80</h3>
           </div>
         </div>
-        <div class="row" data-id="72">
-          <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="80">
+        <div class="row" data-id="65">
           <div class="dot">
             <h3>100</h3>
           </div>
         </div>
       </div>
       <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="9">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="18">
+        <h2>Schätzfrage</h2>
+        <div class="row" data-id="71">
           <div class="dot">
             <h3>20</h3>
           </div>
         </div>
-        <div class="row" data-id="27">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="36">
+        <div class="row" data-id="72">
           <div class="dot">
             <h3>40</h3>
           </div>
         </div>
-        <div class="row" data-id="45">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="54">
+        <div class="row" data-id="73">
           <div class="dot">
             <h3>60</h3>
           </div>
         </div>
-        <div class="row" data-id="63">
-          <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="72">
+        <div class="row" data-id="74">
           <div class="dot">
             <h3>80</h3>
           </div>
         </div>
+        <div class="row" data-id="75">
+          <div class="dot">
+            <h3>100</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h2>Gesichter</h2>
         <div class="row" data-id="81">
           <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="90">
-          <div class="dot">
-            <h3>100</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Kategorie</h2>
-        <div class="row" data-id="10">
-          <div class="dot">
-            <h3>10</h3>
-          </div>
-        </div>
-        <div class="row" data-id="20">
-          <div class="dot">
             <h3>20</h3>
           </div>
         </div>
-        <div class="row" data-id="30">
-          <div class="dot">
-            <h3>30</h3>
-          </div>
-        </div>
-        <div class="row" data-id="40">
+        <div class="row" data-id="82">
           <div class="dot">
             <h3>40</h3>
           </div>
         </div>
-        <div class="row" data-id="50">
-          <div class="dot">
-            <h3>50</h3>
-          </div>
-        </div>
-        <div class="row" data-id="60">
+        <div class="row" data-id="83">
           <div class="dot">
             <h3>60</h3>
           </div>
         </div>
-        <div class="row" data-id="70">
-          <div class="dot">
-            <h3>70</h3>
-          </div>
-        </div>
-        <div class="row" data-id="80">
+        <div class="row" data-id="84">
           <div class="dot">
             <h3>80</h3>
           </div>
         </div>
-        <div class="row" data-id="90">
-          <div class="dot">
-            <h3>90</h3>
-          </div>
-        </div>
-        <div class="row" data-id="100">
+        <div class="row" data-id="85">
           <div class="dot">
             <h3>100</h3>
           </div>
         </div>
       </div>
     </main>
-    <div class="pane" id="1">
+    <div class="pane" id="11">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Welche Bundesländer hat Deutschland?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="2">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="3">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="4">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="5">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="6">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="7">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="8">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="9">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="10">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="2">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="4">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="6">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="8">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="10">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="12">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Wie heißt unser Bundespräsident?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="13">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question"> </div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="14">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Wie heißt die Hauptstadt von Kanada?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="16">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="18">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="20">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="3">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="6">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="9">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="12">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="15">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Welche Länder sitzen im G20?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="18">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="21">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Nenne die vier Werte von GB</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="22">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Was verbirgt sich hinter dem Kürzel Z-MD?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="23">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Was fertigt die Abteilung CPC?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="24">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Nenne die Schulungsräume im TEZ 2.OG</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="27">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="30">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="4">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="8">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="12">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="16">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="20">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="24">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="28">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="32">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="36">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="40">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="5">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="10">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="15">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="20">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="25">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">In welcher Reihenfolge stehen die Kategorien auf dem Foodplan?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="30">
+    <div class="pane" id="31">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> </div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="35">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="40">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="45">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="50">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="6">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="12">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="18">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="24">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="30">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="36">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="42">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="48">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="54">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="60">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="7">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="14">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="21">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="28">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="35">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="42">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="49">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="56">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="63">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="70">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="8">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="16">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="24">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="32">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> </div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="40">
+    <div class="pane" id="33">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Wie viele verschiedene Produkte hat der Bereich K?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="48">
+    <div class="pane" id="34">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Wie heißt die kleinste Nadel?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="56">
+    <div class="pane" id="35">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> </div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="64">
+    <div class="pane" id="41">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Was heißt IT ausgeschrieben?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="72">
+    <div class="pane" id="42">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">DHCP ausgeschrieben?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="80">
+    <div class="pane" id="43">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Welches Symbol erscheint beim drücken der Tastenkombination <kbd>Alt</kbd> + <kbd>3</kbd> ?              </div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="9">
+    <div class="pane" id="44">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Welches G-Präfix hat Belgien?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="18">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="27">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="36">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="45">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Das wievielte Bit im IP-Header ist das Evil-Bit?</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="51">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Wieviele Kardex-Türme stehen im Hauptlager</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="52">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Wie viel Rasenfläche hat GB?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="53">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Wer ist Spartenleiter von D?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="54">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> </div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="55">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question"> </div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="61">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Wann und wo war man das letzte mal auf der ITMA?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="62">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Welcher Azubi aus dem zweiten Lehrjar startete seine Ausbildung erst 6 Monate später als die anderen?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> Daniel Weber</div>
       </div>
     </div>
     <div class="pane" id="63">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Weit wann gibt es die Azubifirma</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="64">
+      <div class="close">Schließen</div>
+      <h2>Frage </h2>
+      <div class="question">Wie alt ist aktuell der älteste GB-Azubi?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="65">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question"> </div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="71">Wie viele Einwohner hat Europa?
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question"> </div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="72">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question">Wie weit ist die Erde von der Sonne entfernt? (km)</div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer">1AE =</div>
+      </div>
+    </div>
+    <div class="pane" id="73">
+      <div class="close">Schließen</div>
+      <h2>Frage Wie viele Server (VMs) hat GB?</h2>
+      <div class="question"> </div>
+      <h2>Antwort 650</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="74">
+      <div class="close">Schließen</div>
+      <h2>Frage Wie weit ist Albstadt von DaNang entfernt? (Luftlinie)</h2>
+      <div class="question"> </div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
+      </div>
+    </div>
+    <div class="pane" id="75">
+      <div class="close">Schließen</div>
+      <h2>Frage</h2>
+      <div class="question">Wie groß ist der Durchmesser der Erde?</div>
+      <h2>Antwort</h2>
+      <div class="show"> 
+        <h2>Antwort Zeigen</h2>
+        <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="81">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> <img src="./img/face1.jpg"></div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="90">
+    <div class="pane" id="82">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> <img src="./img/face2.jpg"></div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="10">
+    <div class="pane" id="83">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> <img src="./img/face3.jpg"></div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="20">
+    <div class="pane" id="84">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> <img src="./img/face1.jpg"></div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="30">
+    <div class="pane" id="85">
       <div class="close">Schließen</div>
       <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
+      <div class="question"> <img src="./img/face2.jpg"></div>
       <h2>Antwort</h2>
       <div class="show"> 
         <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="40">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="50">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="60">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="70">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="80">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="90">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
-      </div>
-    </div>
-    <div class="pane" id="100">
-      <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, dolores! Expedita quos dolore, esse delectus, voluptatibus accusantium labore sunt iste accusamus. Temporibus aliquid voluptatum perferendis saepe fugiat aliquam quo earum.</div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere accusantium, accusamus earum mollitia illum dolor distinctio! Quis similique doloribus, facere, nisi minus numquam sapiente esse, fugit facilis laboriosam, eligendi nihil.</div>
+        <div class="answer"> </div>
       </div>
     </div>
     <footer></footer>
