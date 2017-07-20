@@ -3,8 +3,20 @@
   <head>
     <title>QUIZ</title>
     <style>@import url(./normalize.css);
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
-  font-family: 'Arial', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  background: url(./img/BG3.jpg);
+  background-size: cover;
+  height: 100%;
+  color: #fff;
+  font-size: 14px; }
+
+:root {
+  font-size: 14px; }
 
 main {
   width: 100%;
@@ -45,11 +57,25 @@ main {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 0 10px;
-    width: 8%; }
+    padding: 0 15px;
+    width: 9%; }
     main .col h2 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
       text-align: center;
-      height: 30px; }
+      height: 30px;
+      font-weight: 300;
+      text-shadow: 0 0 15px rgba(10, 10, 10, 0.3); }
   main .row {
     display: -webkit-box;
     display: -webkit-flex;
@@ -65,6 +91,9 @@ main {
     justify-content: center;
     padding: 10px 0; }
   main .dot {
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    transition: 0.5s all;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -77,54 +106,105 @@ main {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 4.3rem;
+    height: 4.3rem;
     padding: 2.5px 5px;
     font-size: 25px;
     text-align: center;
     line-height: 1;
     margin: 10px;
     border-radius: 50%;
-    background-color: #2742a4;
-    color: #fff;
-    cursor: pointer; }
+    background-color: #fff;
+    color: #120f2e;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3); }
     main .dot.opened {
-      background: #ad3134;
-      color: #ad3134; }
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background: transparent;
+      color: transparent;
+      pointer-events: none;
+      cursor: default; }
 
-.pane {
+.pane, .joker {
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  transition: 0.5s all;
+  opacity: 0;
+  transition: 0.5s all;
   background: #fff;
   line-height: 1.5;
+  color: #444;
   position: fixed;
-  left: 50%;
-  top: 50%;
+  left: -50%;
+  top: -50%;
   width: 60%;
   padding: 30px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 0 20px rgba(60, 60, 60, 0.6);
   box-shadow: 0 0 20px rgba(60, 60, 60, 0.6);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: none; }
-  .pane .question {
+  transform: translate(-50%, -50%); }
+  .pane.open, .open.joker {
+    top: 50%;
+    left: 50%;
+    opacity: 1; }
+  .pane .question, .joker .question {
+    padding: 1rem 0;
     font-size: 3rem;
     text-align: center; }
-    .pane .question img {
+    .pane .question img, .joker .question img {
       max-height: 500px; }
-  .pane .close, .pane .show h2 {
+  .pane .close, .joker .close, .pane .show p, .joker .show p {
     padding: 5px;
-    border-radius: 2px;
-    background: #86a84e;
+    border-radius: 3px;
+    background: #111c49;
+    -webkit-box-shadow: 0 0 21rem rgba(60, 60, 60, 0.6);
+    box-shadow: 0 0 21rem rgba(60, 60, 60, 0.6);
     color: #fff;
     text-align: center;
     width: 150px;
+    font-weight: 300;
     text-transform: uppercase;
-    cursor: pointer; }
-  .pane .show h2 {
     cursor: pointer;
-    font-size: 13px; }
-  .pane .show .answer {
-    display: none; }
+    letter-spacing: 1px; }
+  .pane .show, .joker .show {
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    transition: 0.5s all; }
+    .pane .show p, .joker .show p {
+      -webkit-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      transition: 0.5s all;
+      cursor: pointer;
+      font-size: 13px; }
+    .pane .show .answer, .joker .show .answer {
+      -webkit-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      transition: 0.5s all;
+      opacity: 0;
+      height: 0;
+      font-size: 2rem; }
+  .pane .show.open p, .joker .show.open p {
+    opacity: 0; }
+  .pane .show.open .answer, .joker .show.open .answer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 25rem;
+    opacity: 1;
+    text-align: center; }
 
 kbd {
   display: inline-block;
@@ -133,12 +213,341 @@ kbd {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   padding: 0 6px; }
 
+.points {
+  height: 15rem;
+  width: 15rem;
+  position: fixed;
+  z-index: 300; }
+  .points::before {
+    content: '';
+    position: fixed;
+    bottom: -10rem;
+    height: 20rem;
+    width: 20rem;
+    z-index: 50; }
+  .points p {
+    position: fixed;
+    bottom: 0;
+    font-size: 2rem;
+    z-index: 100; }
+  .points .addpoints {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 1;
+    position: fixed;
+    z-index: 20;
+    border-radius: 50%; }
+  .points.left {
+    bottom: 0;
+    left: 0; }
+    .points.left::before {
+      left: -10rem;
+      background: #5788d5;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    .points.left p {
+      left: 1rem; }
+    .points.left .addpoints {
+      background: #5788d5;
+      z-index: 10;
+      bottom: 0;
+      left: 0;
+      -webkit-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      transition: 0.5s all;
+      cursor: pointer; }
+      .points.left .addpoints:hover {
+        background: #1d4076; }
+    .points.left:hover .addpoints {
+      bottom: 13.5rem;
+      left: 1.5rem; }
+      .points.left:hover .addpoints.p40 {
+        bottom: 10.5rem;
+        left: 4.5rem; }
+      .points.left:hover .addpoints.p60 {
+        bottom: 7.5rem;
+        left: 7.5rem; }
+      .points.left:hover .addpoints.p80 {
+        bottom: 4.5rem;
+        left: 10.5rem; }
+      .points.left:hover .addpoints.p100 {
+        bottom: 1.5rem;
+        left: 13.5rem; }
+  .points.right {
+    bottom: 0;
+    right: 0; }
+    .points.right::before {
+      right: -10rem;
+      background: #f43c23;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .points.right p {
+      right: 1rem; }
+    .points.right .addpoints {
+      background: #f43c23; }
+    .points.right .addpoints {
+      background: #f43c23;
+      z-index: 10;
+      bottom: 0;
+      right: 0;
+      -webkit-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      transition: 0.5s all;
+      cursor: pointer; }
+      .points.right .addpoints:hover {
+        background: #781406; }
+    .points.right:hover .addpoints {
+      bottom: 13.5rem;
+      right: 1.5rem; }
+      .points.right:hover .addpoints.p40 {
+        bottom: 10.5rem;
+        right: 4.5rem; }
+      .points.right:hover .addpoints.p60 {
+        bottom: 7.5rem;
+        right: 7.5rem; }
+      .points.right:hover .addpoints.p80 {
+        bottom: 4.5rem;
+        right: 10.5rem; }
+      .points.right:hover .addpoints.p100 {
+        bottom: 1.5rem;
+        right: 13.5rem; }
+  .points.topright {
+    top: 0;
+    right: 0; }
+    .points.topright::before {
+      top: -10rem;
+      right: -10rem;
+      background: #934e5b;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .points.topright p {
+      bottom: auto;
+      top: 0;
+      right: 1rem; }
+    .points.topright .addpoints {
+      background: #934e5b; }
+    .points.topright .addpoints {
+      background: #934e5b;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      -webkit-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      transition: 0.5s all;
+      cursor: pointer; }
+      .points.topright .addpoints:hover {
+        background: #2f191d; }
+    .points.topright:hover .addpoints {
+      top: 13.5rem;
+      right: 1.5rem; }
+      .points.topright:hover .addpoints.p40 {
+        top: 10.5rem;
+        right: 4.5rem; }
+      .points.topright:hover .addpoints.p60 {
+        top: 7.5rem;
+        right: 7.5rem; }
+      .points.topright:hover .addpoints.p80 {
+        top: 4.5rem;
+        right: 10.5rem; }
+      .points.topright:hover .addpoints.p100 {
+        top: 1.5rem;
+        right: 13.5rem; }
+
+.joker {
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: none; }
+  .joker img {
+    position: fixed;
+    bottom: 0;
+    left: 25%;
+    height: 30rem;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
+    -webkit-animation: jump 3s ease-in-out infinite;
+    animation: jump 3s ease-in-out infinite; }
+  .joker h1 {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    font-size: 20rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: joker .9s ease-in-out infinite;
+    animation: joker .9s ease-in-out infinite; }
+
+@-webkit-keyframes joker {
+  0%, 100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+    color: red; }
+  25% {
+    -webkit-transform: scale(0.8) translate(-5%, 50%);
+    transform: scale(0.8) translate(-5%, 50%);
+    color: green; }
+  50% {
+    -webkit-transform: scale(0.3) translate(0%, -500%);
+    transform: scale(0.3) translate(0%, -500%);
+    color: blue; }
+  75% {
+    -webkit-transform: scale(0.6) translate(-200%, -130%);
+    transform: scale(0.6) translate(-200%, -130%);
+    color: yellow; } }
+
+@keyframes joker {
+  0%, 100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+    color: red; }
+  25% {
+    -webkit-transform: scale(0.8) translate(-5%, 50%);
+    transform: scale(0.8) translate(-5%, 50%);
+    color: green; }
+  50% {
+    -webkit-transform: scale(0.3) translate(0%, -500%);
+    transform: scale(0.3) translate(0%, -500%);
+    color: blue; }
+  75% {
+    -webkit-transform: scale(0.6) translate(-200%, -130%);
+    transform: scale(0.6) translate(-200%, -130%);
+    color: yellow; } }
+
+@-webkit-keyframes jump {
+  0%, 100% {
+    bottom: 0;
+    left: 25%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  10% {
+    bottom: 2rem;
+    left: 30%;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+  20% {
+    bottom: 0;
+    left: 35%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  30% {
+    bottom: 5rem;
+    left: 20%;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  40% {
+    bottom: 0;
+    left: 18%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 4rem;
+    left: 25%;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); }
+  60% {
+    bottom: 0;
+    left: 20%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  70% {
+    bottom: 7rem;
+    left: 25%;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); }
+  80% {
+    bottom: 0;
+    left: 32%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  90% {
+    bottom: 3rem;
+    left: 30%;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+
+@keyframes jump {
+  0%, 100% {
+    bottom: 0;
+    left: 25%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  10% {
+    bottom: 2rem;
+    left: 30%;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+  20% {
+    bottom: 0;
+    left: 35%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  30% {
+    bottom: 5rem;
+    left: 20%;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  40% {
+    bottom: 0;
+    left: 18%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 4rem;
+    left: 25%;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); }
+  60% {
+    bottom: 0;
+    left: 20%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  70% {
+    bottom: 7rem;
+    left: 25%;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); }
+  80% {
+    bottom: 0;
+    left: 32%;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  90% {
+    bottom: 3rem;
+    left: 30%;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+
     </style>
   </head>
   <body>
     <main>
       <div class="col">
-        <h2>Allgemeinwissen</h2>
+        <h2>Allgemein</h2>
         <div class="row" data-id="11">
           <div class="dot">
             <h3>20</h3>
@@ -166,7 +575,7 @@ kbd {
         </div>
       </div>
       <div class="col">
-        <h2>GB Allgemein</h2>
+        <h2>Groz-Beckert</h2>
         <div class="row" data-id="21">
           <div class="dot">
             <h3>20</h3>
@@ -364,405 +773,365 @@ kbd {
     </main>
     <div class="pane" id="11">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Welche Bundesländer hat Deutschland?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> BW, Bayern, Hessen, NRW, Rheinlandpfalz, Thüringen, Sachsen, Sachsen Anhalt, Niedersachsen, Schleswig Holstein, Bremen, Hamburg, Berlin, Brandenburg, Saarland, Mecklenburg Vorpommern</div>
       </div>
     </div>
     <div class="pane" id="12">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wie heißt unser Bundespräsident?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">Frank-Walther Steinmeier</div>
       </div>
     </div>
     <div class="pane" id="13">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="14">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question">Wie heißt die Hauptstadt von Kanada?</div>
-      <h2>Antwort</h2>
+      <div class="question">Wie heißt die Bundeshauptstadt von Kanada?</div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">Ottawa</div>
       </div>
     </div>
     <div class="pane" id="15">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Welche Länder sitzen im G20?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">China, Japan, Deutschlad, Frankreich, Brasilien, UK, Italien, Russland, Kanada, Indien, Australien, Mexiko, Südkorea, Indonesien, Türkei, Saudi-Arabien, Argentinien, Südafrika</div>
       </div>
     </div>
     <div class="pane" id="21">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Nenne die vier Werte von GB</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">inovativ | seriös | qualitätsbewusst | fair & partnerschaftlich</div>
       </div>
     </div>
     <div class="pane" id="22">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Was verbirgt sich hinter dem Kürzel Z-MD?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">Digital Units</div>
       </div>
     </div>
     <div class="pane" id="23">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Was fertigt die Abteilung CPC?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Stanzwerkzeuge</div>
       </div>
     </div>
     <div class="pane" id="24">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Nenne die Schulungsräume im TEZ 2.OG</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Hofasa, Litespeed, Vosa, Gebedur, Gebecon, Gebeswitch, Posileno </div>
       </div>
     </div>
     <div class="pane" id="25">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">In welcher Reihenfolge stehen die Kategorien auf dem Foodplan?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> 
+          <ol> 
+            <li>Suppe</li>
+            <li>Salate & Vorspeisen</li>
+            <li>Tagesgericht</li>
+            <li>Cook's Finest</li>
+            <li>Fleischlos und reizlos</li>
+            <li>Grillbar</li>
+            <li>AKTUELL</li>
+            <li>Dessert</li>
+          </ol>
+        </div>
       </div>
     </div>
     <div class="pane" id="31">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="32">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="33">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wie viele verschiedene Produkte hat der Bereich K?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="34">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wie heißt die kleinste Nadel?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Bera</div>
       </div>
     </div>
     <div class="pane" id="35">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="41">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Was heißt IT ausgeschrieben?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">Information Technology</div>
       </div>
     </div>
     <div class="pane" id="42">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">DHCP ausgeschrieben?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Dynamic Host Configuration Protocol</div>
       </div>
     </div>
     <div class="pane" id="43">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Welches Symbol erscheint beim drücken der Tastenkombination <kbd>Alt</kbd> + <kbd>3</kbd> ?              </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Ein Herz</div>
       </div>
     </div>
     <div class="pane" id="44">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Welches G-Präfix hat Belgien?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="45">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Das wievielte Bit im IP-Header ist das Evil-Bit?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">Das 51. Bit. Das Evil-Bit ist ein Aprilscherz</div>
       </div>
     </div>
     <div class="pane" id="51">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wieviele Kardex-Türme stehen im Hauptlager</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">8 </div>
       </div>
     </div>
     <div class="pane" id="52">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wie viel Rasenfläche hat GB?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="53">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wer ist Spartenleiter von D?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Bernhard Seufert</div>
       </div>
     </div>
     <div class="pane" id="54">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="55">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="61">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wann und wo war man das letzte mal auf der ITMA?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Mailand 2015</div>
       </div>
     </div>
     <div class="pane" id="62">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Welcher Azubi aus dem zweiten Lehrjar startete seine Ausbildung erst 6 Monate später als die anderen?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> Daniel Weber</div>
       </div>
     </div>
     <div class="pane" id="63">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Weit wann gibt es die Azubifirma</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">2010</div>
       </div>
     </div>
     <div class="pane" id="64">
       <div class="close">Schließen</div>
-      <h2>Frage </h2>
       <div class="question">Wie alt ist aktuell der älteste GB-Azubi?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">30</div>
       </div>
     </div>
     <div class="pane" id="65">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question"> </div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
-    <div class="pane" id="71">Wie viele Einwohner hat Europa?
+    <div class="pane" id="71"> 
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> </div>
-      <h2>Antwort</h2>
+      <div class="question">Wie viele Einwohner hat Europa?</div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">743,1 Mio</div>
       </div>
     </div>
     <div class="pane" id="72">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wie weit ist die Erde von der Sonne entfernt? (km)</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer">1AE =</div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">1AE = 149.600.000 km</div>
       </div>
     </div>
     <div class="pane" id="73">
       <div class="close">Schließen</div>
-      <h2>Frage Wie viele Server (VMs) hat GB?</h2>
-      <div class="question"> </div>
-      <h2>Antwort 650</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+      <div class="question">Wie viele Server (VM) hat GB? </div>
+      <div class="show">
+        <p>Antwort Zeigen</p>
+        <div class="answer">650</div>
       </div>
     </div>
     <div class="pane" id="74">
       <div class="close">Schließen</div>
-      <h2>Frage Wie weit ist Albstadt von DaNang entfernt? (Luftlinie)</h2>
-      <div class="question"> </div>
-      <h2>Antwort</h2>
-      <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+      <div class="question">Wie weit ist Albstadt von DaNang entfernt?</div>
+      <div class="show">
+        <p>Antwort Zeigen</p>
+        <div class="answer"> 9347,4 km</div>
       </div>
     </div>
     <div class="pane" id="75">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
       <div class="question">Wie groß ist der Durchmesser der Erde?</div>
-      <h2>Antwort</h2>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">40.075 km</div>
       </div>
     </div>
     <div class="pane" id="81">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> <img src="./img/face1.jpg"></div>
-      <h2>Antwort</h2>
+      <div class="question"> <img src="./img/face3.jpg"></div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
+        <p>Antwort Zeigen</p>
         <div class="answer"> </div>
       </div>
     </div>
     <div class="pane" id="82">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> <img src="./img/face2.jpg"></div>
-      <h2>Antwort</h2>
+      <div class="question"> <img src="./img/Bild1.jpg"></div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer">Volker Bantle</div>
       </div>
     </div>
     <div class="pane" id="83">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> <img src="./img/face3.jpg"></div>
-      <h2>Antwort</h2>
+      <div class="question"> <img src="./img/wagner.jpg"></div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Sandro Wagner</div>
       </div>
     </div>
     <div class="pane" id="84">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> <img src="./img/face1.jpg"></div>
-      <h2>Antwort</h2>
+      <div class="question"> <img src="./img/melania.jpg"></div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Melania Trump</div>
       </div>
     </div>
     <div class="pane" id="85">
       <div class="close">Schließen</div>
-      <h2>Frage</h2>
-      <div class="question"> <img src="./img/face2.jpg"></div>
-      <h2>Antwort</h2>
+      <div class="question"> <img src="./img/ungetuem.jpg"></div>
       <div class="show"> 
-        <h2>Antwort Zeigen</h2>
-        <div class="answer"> </div>
+        <p>Antwort Zeigen</p>
+        <div class="answer"> Prof. Dr. Dr. Dr. h.c. Michael Ungethüm</div>
       </div>
     </div>
-    <footer></footer>
+    <div class="joker">
+      <div class="close">Schließen</div>
+      <h1>Joker</h1><img src="img/joker.png">
+    </div>
+    <footer>
+      <div class="points left">
+        <p data-points="0">0</p>
+        <div class="addpoints p20" data-points="20">20</div>
+        <div class="addpoints p40" data-points="40">40</div>
+        <div class="addpoints p60" data-points="60">60</div>
+        <div class="addpoints p80" data-points="80">80</div>
+        <div class="addpoints p100" data-points="100">100</div>
+      </div>
+      <div class="points right">
+        <p data-points="0">0</p>
+        <div class="addpoints p20" data-points="20">20</div>
+        <div class="addpoints p40" data-points="40">40</div>
+        <div class="addpoints p60" data-points="60">60</div>
+        <div class="addpoints p80" data-points="80">80</div>
+        <div class="addpoints p100" data-points="100">100</div>
+      </div>
+      <div class="points topright">
+        <p data-points="0">0</p>
+        <div class="addpoints p20" data-points="20">20</div>
+        <div class="addpoints p40" data-points="40">40</div>
+        <div class="addpoints p60" data-points="60">60</div>
+        <div class="addpoints p80" data-points="80">80</div>
+        <div class="addpoints p100" data-points="100">100</div>
+      </div>
+    </footer>
     <script src="./jquery-3.2.1.min.js"></script>
     <script src="./main.js"></script>
   </body>
